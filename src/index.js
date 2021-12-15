@@ -53,17 +53,20 @@ function showWeather(response) {
   let tempMin = Math.round(response.data.main.temp_min)
   let tempMax = Math.round(response.data.main.temp_max)
   let description = response.data.weather[0].description
+  let windSpeed = response.data.wind.speed
   // let icon = response.data.weather[0].icon;
   // var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
 
   let currentMin = document.querySelector('#temperature-low-first')
   let currentMax = document.querySelector('#temperature-high-first')
   let weatherDescription = document.querySelector('.weather')
+  let currentWindSpeed = document.querySelector('#wind-speed')
   // let weatherIcon = document.querySelector("#weather-icon");
 
   currentMin.innerHTML = tempMin
   currentMax.innerHTML = tempMax
   weatherDescription.innerHTML = description
+  currentWindSpeed.innerHTML = windSpeed
   // weatherIcon.innerHTML =
   // "<img src=" + iconUrl + "alt='Icon depicting current weather.'/>";
 }
